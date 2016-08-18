@@ -7,20 +7,29 @@ import me.maker56.survivalgames.game.GameState;
 import me.maker56.survivalgames.user.User;
 import me.maker56.survivalgames.user.UserManager;
 
+import java.util.HashSet;
+
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
+import org.bukkit.block.BlockState;
+import org.bukkit.block.Furnace;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.ItemStack;
 
 public class ChestListener implements Listener {
 	
+	private static Object openedChest;
 	private UserManager um = SurvivalGames.userManger;
 	private ChestManager cm = SurvivalGames.chestManager;
+	
+
 	
 	@SuppressWarnings("deprecation")
 	@EventHandler
